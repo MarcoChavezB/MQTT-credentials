@@ -23,9 +23,11 @@ def intrusionDetector(Dummy):
         x = GPIO.input(21)
         if (x == 0): 
             print("Just Awesome") 
-            client.publish("device/data", payload=datetime.datetime.now() , qos=0, retain=False)
+            payload = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') # Formatear la fecha y hora como una cadena
+            client.publish("device/data", payload=payload , qos=0, retain=False)
         time.sleep(5)
 
 _thread.start_new_thread(intrusionDetector,("Create intrusion Thread",))
 
 client.loop_forever()
+
