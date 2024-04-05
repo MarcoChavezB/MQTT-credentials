@@ -13,7 +13,7 @@ def on_connect(client, userdata, flags, rc):
 
 client = mqtt.Client()
 client.on_connect = on_connect
-client.tls_set(ca_certs='./rootCA.pem', certfile='./e2b8c2dc40c4e0591171f7bd988aa019a0072565f11d1e79268634f5f1b2a859-certificate.pem.crt', keyfile='./e2b8c2dc40c4e0591171f7bd988aa019a0072565f11d1e79268634f5f1b2a859-private.pem.key', tls_version=ssl.PROTOCOL_SSLv23)
+client.tls_set(ca_certs='./AmazonRootCA1.pem', certfile='./cec69141d6f3a0869a78f2331a3b6acebf6bc9ddb27a738dc3945c2ea4a99618-certificate.pem.crt', keyfile='./cec69141d6f3a0869a78f2331a3b6acebf6bc9ddb27a738dc3945c2ea4a99618-private.pem.key', tls_version=ssl.PROTOCOL_SSLv23)
 client.tls_insecure_set(True)
 client.connect("a169mg5ru5h2z1-ats.iot.us-east-2.amazonaws.com", 8883, 60) #Taken from REST API endpoint - Use your own.
 
