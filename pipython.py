@@ -23,7 +23,7 @@ def intrusionDetector(Dummy):
         x = GPIO.input(21)
         if (x == 0): 
             print("Just Awesome") 
-            client.publish("device/data", payload=date.time.now() , qos=0, retain=False)
+            client.publish("device/data", payload=datetime.datetime.now() , qos=0, retain=False)
         time.sleep(5)
 
 _thread.start_new_thread(intrusionDetector,("Create intrusion Thread",))
